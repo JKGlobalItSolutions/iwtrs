@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IWTRS design system — eco-industrial: orange + green + light grey */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 200 18% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 18% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 18% 12%;
+
+    /* Brand: Sky Blue industrial */
+    /* Primary Sky Blue: #0081A7 -> ~194 100% 33% */
+    --primary: 194 100% 33%;
+    --primary-foreground: 0 0% 100%;
+    /* Soft cyan glow */
+    --primary-glow: 194 85% 62%;
+
+    /* Accent: industrial orange (kept) */
+    /* Accent Orange: #FF7A00 -> ~29 100% 50% */
+    --accent: 29 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 29 100% 92%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 200 18% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 14% 42%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 18% 90%;
+    --input: 210 18% 90%;
+    --ring: 194 100% 33%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(194 100% 33%) 0%, hsl(194 85% 62%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(194 85% 62% / 0.12) 0%, hsl(194 100% 33% / 0.06) 100%);
+    --gradient-hero: linear-gradient(120deg, hsl(204 61% 7% / 0.9) 0%, hsl(194 100% 18% / 0.7) 100%);
+
+    /* Shadows (blue/cyan variants) */
+    --shadow-soft: 0 4px 20px -8px hsl(200 30% 20% / 0.12);
+    --shadow-card: 0 10px 40px -15px hsl(194 40% 20% / 0.18);
+    --shadow-glow: 0 20px 60px -20px hsl(194 85% 62% / 0.28);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 204 61% 7%;
+    --foreground: 0 0% 98%;
+    --card: 204 61% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 204 61% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 194 100% 45%;
+    --primary-foreground: 200 25% 8%;
+    --accent: 29 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --secondary: 200 20% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 200 20% 14%;
+    --muted-foreground: 215 14% 65%;
+    --border: 200 20% 18%;
+    --input: 200 20% 18%;
+    --ring: 194 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .bg-gradient-soft { background: var(--gradient-soft); }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
+
+/* Subtle wave divider */
+.wave-divider {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.department-image{
+  width:130px;
+  height:130px;
+  object-fit:contain;
+  border-radius:12px;
+  display:block;
+  margin:auto;
+}
