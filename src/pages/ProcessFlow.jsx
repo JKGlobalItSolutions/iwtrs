@@ -135,9 +135,8 @@ const ProcessFlow = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.4 }}
-                  className={`flex flex-col sm:flex-row items-start sm:items-center gap-8 ${
-                    isEven ? "sm:flex-row-reverse" : ""
-                  }`}
+                  className={`flex flex-col sm:flex-row items-start sm:items-center gap-8 ${isEven ? "sm:flex-row-reverse" : ""
+                    }`}
                 >
                   {/* Visual Node */}
                   <div className="w-12 h-12 rounded-full bg-gradient-brand flex items-center justify-center text-white shrink-0 shadow-soft sm:absolute sm:left-1/2 sm:-translate-x-1/2 z-10 font-bold text-sm">

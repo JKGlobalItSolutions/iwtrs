@@ -220,8 +220,8 @@ const About = () => {
       {/* Bottom CTA Block */}
       <section className="py-16 bg-foreground text-background text-center border-t border-white/10">
         <div className="container mx-auto px-6 max-w-3xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            Interested in doing a water feasibility audit?
+          <h3 className="text-2xl md:text-3xl font-bold mb-3">
+            <span className="text-white">Interested in doing a water feasibility audit?</span>
           </h3>
           <p className="text-background/70 text-sm mb-6 leading-relaxed">
             Let our process design engineers analyze your wastewater streams and provide an energy-efficient recovery system mockup.

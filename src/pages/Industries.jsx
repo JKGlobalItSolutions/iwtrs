@@ -148,11 +148,10 @@ const Industries = () => {
               <button
                 key={loc}
                 onClick={() => setSelectedLoc(loc)}
-                className={`text-xs font-semibold py-2 px-3 rounded-full border transition-smooth whitespace-nowrap ${
-                  selectedLoc === loc
+                className={`text-xs font-semibold py-2 px-3 rounded-full border transition-smooth whitespace-nowrap ${selectedLoc === loc
                     ? "bg-primary text-white border-primary shadow-soft"
                     : "bg-background text-muted-foreground border-border hover:bg-muted"
-                }`}
+                  }`}
               >
                 {loc}
               </button>

@@ -143,9 +143,8 @@ const CostAnalysis = () => {
                       </td>
                       <td className="px-6 py-5">
                         <div className="flex items-center gap-2">
-                          <span className={`w-2 h-2 rounded-full ${
-                            r.energy.includes("Low") ? "bg-primary" : r.energy.includes("Medium") ? "bg-accent" : "bg-destructive"
-                          }`} />
+                          <span className={`w-2 h-2 rounded-full ${r.energy.includes("Low") ? "bg-primary" : r.energy.includes("Medium") ? "bg-accent" : "bg-destructive"
+                            }`} />
                           <span className="text-xs text-foreground font-semibold">{r.energy}</span>
                         </div>
                       </td>

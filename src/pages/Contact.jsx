@@ -18,7 +18,7 @@ const Contact = () => {
   const validate = () => {
     const err = {};
     if (!name.trim()) err.name = "Full Name is required";
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim()) {
       err.email = "Email Address is required";
@@ -43,7 +43,7 @@ const Contact = () => {
     e.preventDefault();
     if (validate()) {
       setIsSubmitting(true);
-      
+
       // Simulate API submission
       setTimeout(() => {
         setIsSubmitting(false);
@@ -51,7 +51,7 @@ const Contact = () => {
           description: "Thank you for contacting IWTRS. Our process design engineers will reach out to you within 24 hours.",
           duration: 5000
         });
-        
+
         // Reset fields
         setName("");
         setEmail("");
@@ -90,7 +90,7 @@ const Contact = () => {
       {/* Main Form & Contact Info */}
       <section className="py-16 md:py-24 container mx-auto px-6 max-w-6xl">
         <div className="grid lg:grid-cols-5 gap-12 items-stretch">
-          
+
           {/* Contact details - Left (2 columns) */}
           <div className="lg:col-span-2 space-y-8 flex flex-col justify-between">
             <div className="space-y-6">
@@ -103,7 +103,7 @@ const Contact = () => {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Connect with our Tiruppur-based engineering core. Whether you need a free process water audit, chemical sizing calculations, or ongoing O&M contract rates, our specialists are available.
               </p>
-              
+
               <div className="space-y-4 pt-4 border-t border-border/60">
                 {/* Address */}
                 <div className="flex gap-4 items-start">
@@ -188,9 +188,8 @@ const Contact = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
-                    className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${
-                      errors.name ? "border-destructive focus:ring-destructive" : "border-border"
-                    }`}
+                    className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${errors.name ? "border-destructive focus:ring-destructive" : "border-border"
+                      }`}
                   />
                   {errors.name && (
                     <span className="text-xs text-destructive flex items-center gap-1 mt-1">
@@ -210,9 +209,8 @@ const Contact = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="name@company.com"
-                      className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${
-                        errors.email ? "border-destructive focus:ring-destructive" : "border-border"
-                      }`}
+                      className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${errors.email ? "border-destructive focus:ring-destructive" : "border-border"
+                        }`}
                     />
                     {errors.email && (
                       <span className="text-xs text-destructive flex items-center gap-1 mt-1">
@@ -231,9 +229,8 @@ const Contact = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="Enter mobile number"
-                      className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${
-                        errors.phone ? "border-destructive focus:ring-destructive" : "border-border"
-                      }`}
+                      className={`rounded-xl h-11 border bg-background/50 focus:ring-primary ${errors.phone ? "border-destructive focus:ring-destructive" : "border-border"
+                        }`}
                     />
                     {errors.phone && (
                       <span className="text-xs text-destructive flex items-center gap-1 mt-1">
@@ -253,9 +250,8 @@ const Contact = () => {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell us about your ETP capacity, COD/TDS levels, or special resin scaling issues..."
                     rows={5}
-                    className={`rounded-xl border bg-background/50 focus:ring-primary ${
-                      errors.message ? "border-destructive focus:ring-destructive" : "border-border"
-                    }`}
+                    className={`rounded-xl border bg-background/50 focus:ring-primary ${errors.message ? "border-destructive focus:ring-destructive" : "border-border"
+                      }`}
                   />
                   {errors.message && (
                     <span className="text-xs text-destructive flex items-center gap-1 mt-1">

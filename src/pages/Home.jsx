@@ -26,7 +26,7 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero" />
-        
+
         {/* Wave Divider */}
         <svg
           className="absolute bottom-0 left-0 w-full text-background"
@@ -50,9 +50,9 @@ const Home = () => {
               </span>{" "}
               Solutions
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
-              Achieve up to <span className="text-primary-glow font-semibold">94–96% water recovery</span>{" "}
-              with optimized operating cost — engineered for the world's most demanding industries.
+            <p className="text-white text-lg md:text-lg max-w-2xl mb-10 leading-relaxed">
+              <span className="text-white font-semibold">Achieve up to 94–96% water recovery
+              with optimized operating cost — engineered for the world's most demanding industries.</span>{" "}
             </p>
             <div className="flex flex-wrap gap-4">
               <Button

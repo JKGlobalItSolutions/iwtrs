@@ -47,9 +47,8 @@ const DepartmentSelection = () => {
                   type="button"
                   key={department.id}
                   onClick={() => { setSelectedId(department.id); setError(""); }}
-                  className={`w-full text-left rounded-3xl border p-5 shadow-soft transition-all duration-300 mb-2 flex items-center justify-between ${
-                    isSelected ? "border-primary bg-primary/10 ring-1 ring-primary/20" : "border-border bg-card"
-                  }`}
+                  className={`w-full text-left rounded-3xl border p-5 shadow-soft transition-all duration-300 mb-2 flex items-center justify-between ${isSelected ? "border-primary bg-primary/10 ring-1 ring-primary/20" : "border-border bg-card"
+                    }`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${isSelected ? "bg-primary text-white" : "bg-primary/10 text-primary"}`}>

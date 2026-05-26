@@ -60,7 +60,7 @@ const Technologies = () => {
                       <p className="text-xs font-semibold text-muted-foreground leading-relaxed mb-4">
                         {tech.description}
                       </p>
-                      
+
                       {tech.details && (
                         <p className="text-xs text-muted-foreground/80 leading-normal italic mb-4 bg-muted/40 p-3 rounded-lg border border-border/20">
                           "{tech.details}"
