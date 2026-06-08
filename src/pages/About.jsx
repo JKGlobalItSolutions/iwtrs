@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, Users, ChevronRight, Recycle, Check, Building, Wrench } from "lucide-react";
+import { ShieldCheck, Award, Users, ChevronRight, Recycle, Check, Building, Wrench, Globe, ShieldAlert } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -19,7 +19,7 @@ const About = () => {
 
   const services = [
     { title: "Process Engineering & Design", desc: "Customized ETP/STP design based on direct laboratory effluent analysis and sizing." },
-    { title: "Plant Operation & Maintenance (O&M)", desc: "Full-scale O&M management (Slide 12) focused on achieving target recovery and energy consumption benchmarks." },
+    { title: "Plant Operation & Maintenance (O&M)", desc: "Full-scale O&M management focused on achieving target recovery and energy consumption benchmarks." },
     { title: "Chemical & Biological Optimization", desc: "Fine-tuning dosage, aeration, and hydraulics to drastically reduce operating cost." },
     { title: "Upgrade & Retrofitting", desc: "Retrofitting old plants with modern automation, MBR systems, and high-recovery RO stages." },
   ];
@@ -46,64 +46,108 @@ const About = () => {
         </div>
       </section>
 
-      {/* Corporate Overview */}
+      {/* Corporate Overview - REMADE FOR PREMIUM PROFESSIONAL LOOK */}
       <section className="py-16 md:py-24 container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Who We Are</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center md:text-left mb-12 border-b border-border pb-6">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Corporate Overview</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
               Innovation Water Treatments & Recovery Services Pvt Ltd
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4 text-base">
-              Headquartered in the textile hub of Tiruppur, Tamil Nadu, India, **IWTRS** is a premium process engineering company specializing in industrial wastewater recovery and Zero Liquid Discharge (ZLD) plant designs.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-              Our core focus is reducing operational expenses (OpEx) for factories while preserving natural resources. Through high-load biofiltration, custom desizing PVA treatments, membrane bioreactors (MBR), and multi-stage reverse osmosis trains, we achieve up to **94-96% clean water recovery** and complete environmental compliance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 border-t border-border pt-6 mt-6">
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center shrink-0">
-                  <Building className="w-5 h-5 text-accent" />
+          </div>
+
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            {/* Left Column: Core Introduction & Styled Paragraph Layout */}
+            <div className="lg:col-span-7 space-y-8">
+              {/* Main Headline Card */}
+              <div className="p-6 bg-gradient-soft border-l-4 border-primary rounded-r-2xl shadow-sm bg-card">
+                <p className="text-foreground font-medium text-lg leading-relaxed">
+                  Headquartered in Tiruppur, Tamil Nadu, IWTRS is a premium process engineering company specializing in industrial wastewater recovery and Zero Liquid Discharge (ZLD) plant designs.
+                </p>
+              </div>
+
+              {/* Regulatory Context & Challenge Grid */}
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="p-5 border border-border/80 rounded-xl bg-card/50">
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-1.5 text-sm">Compliance & Mandates</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    With TNPCB/CPCB now mandating ZLD for process industries, water reuse has become critical. To meet this, IWTRS developed reliable treatment processes focused on high water recovery with low OpEx.
+                  </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-foreground text-sm">Corporate Office</h4>
-                  <p className="text-xs text-muted-foreground mt-0.5">Avinashi Main Road, Gandhi Nagar, Tiruppur, India</p>
+
+                <div className="p-5 border border-border/80 rounded-xl bg-card/50">
+                  <div className="w-9 h-9 rounded-lg bg-accent-soft flex items-center justify-center text-accent mb-3">
+                    <ShieldAlert className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-1.5 text-sm">Membrane Protection</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    After testing multiple treatment combinations, we found that RO membranes are essential for final salinity removal. The key challenge is membrane fouling from organics and in organics, which drives up replacement costs.
+                  </p>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center shrink-0">
-                  <Wrench className="w-5 h-5 text-accent" />
+
+              {/* Solution Framework Statement */}
+              <div className="p-6 border border-primary/20 bg-primary-soft/10 rounded-2xl">
+                <h4 className="font-bold text-primary uppercase tracking-wider text-xs mb-2">Our Engineering Approach</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  So our focus is strong pre-treatment. Using high-load bio filtration, MBR, and custom desiring PVA removal, we deliver clean RO feed. 
+                </p>
+                <div className="mt-4 pt-4 border-t border-border flex items-center gap-2">
+                  <div className="px-3 py-1 bg-accent/10 text-accent font-bold text-xs rounded-full">
+                    Result
+                  </div>
+                  <span className="text-sm font-semibold text-foreground">
+                    94-96% clean water recovery, protected membranes, and full environmental compliance.
+                  </span>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-foreground text-sm">Industrial Presence</h4>
-                  <p className="text-xs text-muted-foreground mt-0.5">Over 20 premium plant installations globally</p>
+              </div>
+
+              {/* Contact/Office Brief Row */}
+              <div className="flex flex-col sm:flex-row gap-6 border-t border-border pt-6">
+                <div className="flex gap-3 items-center">
+                  <Building className="w-5 h-5 text-muted-foreground shrink-0" />
+                  <div>
+                    <h5 className="font-semibold text-foreground text-xs">Corporate Headquarters</h5>
+                    <p className="text-xs text-muted-foreground">Gandhi Nagar, Tiruppur, India</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Wrench className="w-5 h-5 text-muted-foreground shrink-0" />
+                  <div>
+                    <h5 className="font-semibold text-foreground text-xs">Proven Track Record</h5>
+                    <p className="text-xs text-muted-foreground">Over 20 premium worldwide plant systems</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="bg-gradient-soft border border-border p-8 rounded-3xl shadow-soft">
-            <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-              <Award className="w-5 h-5 text-primary" /> Why Partner with IWTRS?
-            </h3>
-            <ul className="space-y-4">
-              {[
-                { t: "Deep Process Expertise", d: "Tailored engineering for complex effluent streams containing dyes, sizing agents, and heavy salt loads." },
-                { t: "Energy-Efficient Design", desc: "Aeration flow makers, hydraulics modeling, and low-energy pump operations cut power by 32%+." },
-                { t: "Extended Membrane Life", desc: "Advanced MBR pre-treatment keeps SDI under 2.5, extending RO membrane life up to 4 years." },
-                { t: "Total Life-Cycle Support", desc: "From lab-scale feasibility assessments to full turnkey supply, automation, and ongoing O&M." }
-              ].map((item, idx) => (
-                <li key={idx} className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <strong className="text-foreground text-sm font-semibold block">{item.t}</strong>
-                    <span className="text-xs text-muted-foreground leading-normal mt-0.5 block">{item.d || item.desc}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {/* Right Column: Why Partner Side Card (Maintained for layout balance) */}
+            <div className="lg:col-span-5 bg-gradient-soft border border-border p-8 rounded-3xl shadow-soft">
+              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                <Award className="w-5 h-5 text-primary" /> Why Partner with IWTRS?
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  { t: "Deep Process Expertise", d: "Tailored engineering for complex effluent streams containing dyes, sizing agents, and heavy salt loads." },
+                  { t: "Energy-Efficient Design", desc: "Aeration flow makers, hydraulics modeling, and low-energy pump operations cut power by 32%+." },
+                  { t: "Extended Membrane Life", desc: "Advanced MBR pre-treatment keeps SDI under 2.5, extending RO membrane life up to 4 years." },
+                  { t: "Total Life-Cycle Support", desc: "From lab-scale feasibility assessments to full turnkey supply, automation, and ongoing O&M." }
+                ].map((item, idx) => (
+                  <li key={idx} className="flex gap-3 items-start">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0">
+                      <Check className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <strong className="text-foreground text-sm font-semibold block">{item.t}</strong>
+                      <span className="text-xs text-muted-foreground leading-normal mt-0.5 block">{item.d || item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -197,7 +241,7 @@ const About = () => {
               Our Industrial Supplies Catalog
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              We manufacture and source state-of-the-art machinery, filters, and high-performance resins to supply complete, turn-key ETP/STP and ZLD installations (Slide 14).
+              We manufacture and source state-of-the-art machinery, filters, and high-performance resins to supply complete, turn-key ETP/STP and ZLD installations.
             </p>
           </div>
 

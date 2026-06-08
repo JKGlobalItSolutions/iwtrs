@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* IWTRS Premium Design System — Eco-Industrial Theme: Sky Blue + Green */
+/* IWTRS Premium Design System — Corporate Dark Blue Theme */
 @layer base {
   :root {
     --background: 210 40% 98%; /* Light Gray Background #F8FAFC */
@@ -19,13 +19,13 @@
     --primary-foreground: 0 0% 100%;
     --primary-glow: 201 96% 40%; /* Deep Sky Blue #0284C7 */
 
-    /* Accent: Green Accent */
-    --accent: 162 84% 41%; /* Green Accent #10B981 */
+    /* Accent: Shifted from Green to Premium Dark Blue/Navy */
+    --accent: 224 76% 35%; /* Premium Dark Blue #1E3A8A */
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 162 84% 95%;
+    --accent-soft: 214 32% 95%;
 
     --secondary: 200 100% 97%; /* Soft Blue Background #F0F9FF */
-    --secondary-foreground: 201 96% 40%; /* Deep Sky Blue #0284C7 */
+    --secondary-foreground: 224 76% 35%; 
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%; /* Secondary Text #475569 */
@@ -35,19 +35,20 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 199 89% 48%;
+    --ring: 224 76% 35%;
 
     --radius: 1.25rem; /* 20px card radius */
 
-    /* Gradients */
-    --gradient-brand: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
-    --gradient-soft: linear-gradient(135deg, #F0F9FF 0%, rgba(16, 185, 129, 0.08) 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(2, 132, 199, 0.85) 0%, rgba(5, 150, 105, 0.75) 100%);
+    /* Gradients (Completely removed green, added deep professional blues) */
+    --gradient-brand: linear-gradient(135deg, #0EA5E9 0%, #1E3A8A 100%);
+    --gradient-soft: linear-gradient(135deg, #F0F9FF 0%, rgba(30, 58, 138, 0.05) 100%);
+    
+    /* Hero Gradient: High contrast Dark Navy overlay makes text 100% visible */
+    --gradient-hero: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.85) 100%);
 
-    /* Shadows (sky-blue/green variants) */
-    --shadow-soft: 0 4px 20px -8px rgba(14, 165, 233, 0.12);
-    --shadow-card: 0 10px 40px -15px rgba(14, 165, 233, 0.18);
-    --shadow-glow: 0 20px 60px -20px rgba(16, 185, 129, 0.28);
+    --shadow-soft: 0 4px 20px -8px rgba(30, 58, 138, 0.12);
+    --shadow-card: 0 10px 40px -15px rgba(30, 58, 138, 0.18);
+    --shadow-glow: 0 20px 60px -20px rgba(14, 165, 233, 0.28);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -61,7 +62,7 @@
     --popover-foreground: 210 40% 98%;
     --primary: 199 89% 48%;
     --primary-foreground: 0 0% 100%;
-    --accent: 162 84% 41%;
+    --accent: 224 76% 35%;
     --accent-foreground: 0 0% 100%;
     --secondary: 222 47% 14%;
     --secondary-foreground: 210 40% 98%;
@@ -69,7 +70,7 @@
     --muted-foreground: 215 16% 70%;
     --border: 222 47% 18%;
     --input: 222 47% 18%;
-    --ring: 199 89% 48%;
+    --ring: 224 76% 35%;
   }
 }
 
@@ -139,9 +140,9 @@ p {
   line-height: 1.7;
 }
 
-/* Hero Section Title Gradients */
+/* Hero Section Title Gradients - Changed to Sky Blue to Dark Blue */
 .bg-gradient-to-r.from-accent {
-  background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%) !important;
+  background: linear-gradient(135deg, #0EA5E9 0%, #1E3A8A 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -156,7 +157,7 @@ header {
 }
 
 header nav a:hover, header .group:hover span {
-  color: #10B981 !important;
+  color: #0EA5E9 !important;
 }
 
 header .text-primary {
@@ -169,7 +170,7 @@ header .after\:bg-primary::after {
 
 /* Sticky Header Action Button */
 header button.bg-primary, header a.bg-primary, .navbar-cta {
-  background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%) !important;
+  background: linear-gradient(135deg, #0EA5E9 0%, #1E3A8A 100%) !important;
   color: #FFFFFF !important;
   border: none !important;
   border-radius: 9999px !important;
@@ -177,7 +178,7 @@ header button.bg-primary, header a.bg-primary, .navbar-cta {
 }
 
 header button.bg-primary:hover, header a.bg-primary:hover, .navbar-cta:hover {
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+  background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%) !important;
   transform: scale(1.05) !important;
 }
 
@@ -215,7 +216,7 @@ header button.bg-primary:hover, header a.bg-primary:hover, .navbar-cta:hover {
 }
 
 .bg-primary:hover, button.bg-primary:hover, a.bg-primary:hover {
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+  background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%) !important;
   box-shadow: var(--shadow-glow) !important;
 }
 
@@ -229,8 +230,8 @@ header button.bg-primary:hover, header a.bg-primary:hover, .navbar-cta:hover {
 }
 
 .border-accent.text-accent.bg-transparent:hover {
-  background-color: #10B981 !important;
-  border-color: #10B981 !important;
+  background-color: #1E3A8A !important;
+  border-color: #1E3A8A !important;
   color: #FFFFFF !important;
 }
 
@@ -246,7 +247,7 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   border-color: #0EA5E9 !important;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15) !important;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15) !important;
   outline: none !important;
 }
 
@@ -256,9 +257,9 @@ label {
   font-size: 0.875rem !important;
 }
 
-/* Premium Footer Styling */
+/* Premium Footer Styling — Changed from Green to Premium Dark Navy/Blue */
 footer {
-  background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%) !important; /* Sky Blue and Green Gradient */
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%) !important; 
   color: #FFFFFF !important;
   border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
@@ -278,7 +279,7 @@ footer a {
 }
 
 footer a:hover, footer a.hover\:text-white:hover {
-  color: #0F172A !important; /* Premium dark navy contrast hover */
+  color: #0EA5E9 !important; 
 }
 
 /* Adjust social icons and contact icons for high visibility on gradient */

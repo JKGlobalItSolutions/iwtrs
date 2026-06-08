@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Droplets, Menu, X, ChevronDown, Award } from "lucide-react";
+import { Menu, X, ChevronDown, Award } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
+import expBadge from "@/assets/experience-badge.png"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,34 +18,31 @@ const Navbar = () => {
     { label: "Process Flow", path: "/process" },
     { label: "Cost Analysis", path: "/cost" },
     { label: "Industries", path: "/industries" },
-    // { label: "Smart Features", path: "/features" },
     { label: "Contact", path: "/contact" },
   ];
 
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 transition-smooth">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src={logo} alt="IWTRS" className="h-10 w-auto" />
-            {/* <div className="w-9 h-9 rounded-lg bg-gradient-brand flex items-center justify-center shadow-soft group-hover:scale-105 transition-smooth">
-              <Droplets className="w-5 h-5 text-white" />
-            </div> */}
-            <span className="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+        <div className="container mx-auto px-4 xl:px-6 h-20 flex items-center justify-between">
+          
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
+            <img src={logo} alt="IWTRS" className="h-16 w-auto object-contain" />
+            <span className="font-display font-bold text-2xl tracking-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent hidden sm:block">
               IWTRS
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-5 text-sm font-medium text-muted-foreground">
             {links.map((link) => (
               <NavLink
                 key={link.label}
                 to={link.path}
                 className={({ isActive }) =>
                   cn(
-                    "hover:text-primary transition-smooth py-1.5 relative px-1",
+                    "hover:text-primary transition-smooth py-1.5 relative px-1 white-space-nowrap",
                     isActive
                       ? "text-primary font-bold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full"
                       : "text-muted-foreground"
@@ -90,18 +88,27 @@ const Navbar = () => {
             </div>
           </nav>
 
-          {/* Right Action */}
-          <div className="hidden xl:flex items-center gap-4">
+          {/* Right Actions: Experience Badge & Button */}
+          <div className="hidden xl:flex items-center gap-6 shrink-0">
+            {/* Experience Badge - லோகோ லைட்டாக பெரிதாக்கப்பட்டுள்ளது (h-14 இலிருந்து h-16 ஆக மாற்றப்பட்டுள்ளது) */}
+            <div className="flex items-center justify-center min-w-[120px] transition-smooth hover:scale-105">
+              <img 
+                src={expBadge} 
+                alt="40 Years of Experience" 
+                className="h-16 w-auto object-contain mix-blend-multiply" 
+              />
+            </div>
+
             <Button
               asChild
-              size="sm"
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 h-9 text-sm font-semibold shadow-soft"
+              size="md"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-10 text-sm font-semibold shadow-soft navbar-cta"
             >
               <Link to="/contact">Get in touch</Link>
             </Button>
           </div>
 
-          {/* Hamburger Menu Icon */}
+          {/* Hamburger Menu Icon for Mobile */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="xl:hidden p-2 text-muted-foreground hover:text-foreground focus:outline-none"
@@ -114,18 +121,28 @@ const Navbar = () => {
         {/* Mobile Navigation Drawer */}
         <div
           className={cn(
-            "fixed inset-x-0 top-16 bottom-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border xl:hidden transition-all duration-300 ease-in-out overflow-y-auto px-6 py-8",
+            "fixed inset-x-0 top-20 bottom-0 z-40 bg-background/95 backdrop-blur-xl border-t border-border xl:hidden transition-all duration-300 ease-in-out overflow-y-auto px-6 py-6",
             isOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"
           )}
         >
-          <div className="flex flex-col gap-6 text-base font-semibold">
+          <div className="flex flex-col gap-5 text-base font-semibold">
+            
+            {/* Mobile View Badge - இங்கும் லோகோ லைட்டாக பெரிதாக்கப்பட்டுள்ளது (h-16 இலிருந்து h-20 ஆக மாற்றப்பட்டுள்ளது) */}
+            <div className="w-full flex justify-center py-2">
+              <img 
+                src={expBadge} 
+                alt="40 Years of Experience" 
+                className="h-20 w-auto object-contain mix-blend-multiply" 
+              />
+            </div>
+
             {links.map((link) => (
               <Link
                 key={link.label}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "hover:text-primary transition-smooth py-1 border-b border-border/50",
+                  "hover:text-primary transition-smooth py-1.5 border-b border-border/50",
                   location.pathname === link.path ? "text-primary font-bold" : "text-muted-foreground"
                 )}
               >
@@ -134,8 +151,8 @@ const Navbar = () => {
             ))}
 
             {/* Mobile Career Section */}
-            <div className="space-y-3">
-              <span className="text-muted-foreground text-sm font-bold uppercase tracking-wider">Career</span>
+            <div className="space-y-2">
+              <span className="text-muted-foreground text-xs font-bold uppercase tracking-wider">Career</span>
               <div className="pl-4">
                 <Link
                   to="/internship"
@@ -150,7 +167,7 @@ const Navbar = () => {
 
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-white rounded-full py-6 mt-4 shadow-soft text-base font-semibold"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full py-6 mt-2 shadow-soft text-base font-semibold"
             >
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 Get in touch
@@ -159,7 +176,6 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-
     </>
   );
 };

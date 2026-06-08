@@ -96,7 +96,7 @@ const Internship = () => {
         <DialogContent className="max-w-md overflow-hidden bg-white rounded-2xl border border-border/80 shadow-card p-0">
           <DialogHeader className="p-6 pb-4">
             <DialogTitle className="text-xl font-bold">Welcome — please share basic details</DialogTitle>
-            <DialogDescription className="text-sm text-slate-500 mt-1">We need a few details before you can view the departments.</DialogDescription>
+            <DialogDescription className="text-sm text-slate-500 mt-1">Our team will contact you.</DialogDescription>
           </DialogHeader>
           <div className="p-6">
             <div className="space-y-4">

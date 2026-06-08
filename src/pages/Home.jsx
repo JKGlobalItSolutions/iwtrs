@@ -43,17 +43,22 @@ const Home = () => {
               <Leaf className="w-3.5 h-3.5 text-primary-glow" />
               ECO-ENGINEERED · ZERO LIQUID DISCHARGE
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6">
+            
+            {/* மாற்றி அமைக்கப்பட்ட தலைப்பு பகுதி - பக்கா ப்ரொஃபெஷனல் ஒயிட் லுக் */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold !text-white leading-[1.05] mb-6">
               Advanced Wastewater Treatment &{" "}
-              <span className="bg-gradient-to-r from-accent to-primary-glow bg-clip-text text-transparent">
+              <span className="text-[#0EA5E9] bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-sm">
                 Zero Liquid Discharge
               </span>{" "}
               Solutions
             </h1>
+            
             <p className="text-white text-lg md:text-lg max-w-2xl mb-10 leading-relaxed">
-              <span className="text-white font-semibold">Achieve up to 94–96% water recovery
-              with optimized operating cost — engineered for the world's most demanding industries.</span>{" "}
+              <span className="text-white/95 font-semibold drop-shadow-sm">
+                Achieve up to 94–96% water recovery with optimized operating cost — engineered for the world's most demanding industries.
+              </span>{" "}
             </p>
+            
             <div className="flex flex-wrap gap-4">
               <Button
                 asChild
