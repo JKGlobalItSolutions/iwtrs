@@ -112,7 +112,7 @@ export const projects = [
     highlights: ["Special high-salinity resins", "High recovery RO"]
   },
   {
-    name: "Jay Jay Textile Lanka",
+    name: "Jay Jay Textile Lanka (Private) Limited",
     industry: "Spinning & Knitting Yarn",
     location: "Sri Lanka",
     capacity: 1500,

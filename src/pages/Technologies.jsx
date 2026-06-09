@@ -19,7 +19,7 @@ const Technologies = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Our Core Technologies
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-3xl mx-auto drop-shadow-sm opacity-95">
             Modular unit operations engineered to combine into complete, high-efficiency water recovery and ZLD systems.
           </p>
         </div>

@@ -59,7 +59,7 @@ const CostAnalysis = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             OpEx Cost Analysis
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-2xl mx-auto opacity-90 drop-shadow-sm">
             Phase-by-phase operating cost optimization. Engineered to minimize chemical and electrical load while maximizing water recovery.
           </p>
         </div>

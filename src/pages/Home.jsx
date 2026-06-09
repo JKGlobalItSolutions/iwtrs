@@ -44,7 +44,6 @@ const Home = () => {
               ECO-ENGINEERED · ZERO LIQUID DISCHARGE
             </span>
             
-            {/* மாற்றி அமைக்கப்பட்ட தலைப்பு பகுதி - பக்கா ப்ரொஃபெஷனல் ஒயிட் லுக் */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold !text-white leading-[1.05] mb-6">
               Advanced Wastewater Treatment &{" "}
               <span className="text-[#0EA5E9] bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-sm">
@@ -55,7 +54,8 @@ const Home = () => {
             
             <p className="text-white text-lg md:text-lg max-w-2xl mb-10 leading-relaxed">
               <span className="text-white/95 font-semibold drop-shadow-sm">
-                Achieve up to 94–96% water recovery with optimized operating cost — engineered for the world's most demanding industries.
+                {/* Updated to 96–98% */}
+                Achieve up to 96–98% water recovery with optimized operating cost — engineered for the world's most demanding industries.
               </span>{" "}
             </p>
             
@@ -124,7 +124,8 @@ const Home = () => {
             />
             <FeatureCard
               icon={Recycle}
-              title="High Recovery 94–96%"
+              /* Updated title and description to 96–98% */
+              title="High Recovery 96–98%"
               description="Advanced membrane trains and ZLD integration return clean water back into your industrial processes."
             />
             <FeatureCard
@@ -136,8 +137,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technologies Preview */}
-      <section className="py-20 md:py-28 bg-gradient-soft">
+      {/* Technologies Preview - Fixed Spacing (Correction 3 Applied here) */}
+      <section className="pt-4 pb-16 md:pb-20 bg-gradient-soft">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
@@ -183,7 +184,7 @@ const Home = () => {
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Reduce Cost. Save Water. Improve Efficiency.
               </h2>
-              <p className="text-white/85 text-lg mb-8 leading-relaxed">
+              <p className="!text-white font-medium text-lg mb-8 leading-relaxed drop-shadow-sm">
                 Talk to our process engineers about your effluent stream — we'll design the right recovery solution.
               </p>
               <Button

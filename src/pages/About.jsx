@@ -24,16 +24,16 @@ const About = () => {
     { title: "Upgrade & Retrofitting", desc: "Retrofitting old plants with modern automation, MBR systems, and high-recovery RO stages." },
   ];
 
-  // Professional Services List - Icons configured for Blue Theme
+  // Professional Services List - Icons configured for Blue Theme with increased sizes (w-5.5 h-5.5)
   const professionalServicesList = [
-    { text: "Innovative and Ergonomic System design", icon: <Settings className="w-4 h-4 text-blue-600" /> },
-    { text: "All Equipment and Spares Supply with regard to wastewater Treatment", icon: <Layers className="w-4 h-4 text-blue-600" /> },
-    { text: "Budget pricing", icon: <BadgePercent className="w-4 h-4 text-blue-600" /> },
-    { text: "Complete Project Management", icon: <Shield className="w-4 h-4 text-blue-600" /> },
-    { text: "Round the clock Technical backup", icon: <Clock className="w-4 h-4 text-blue-600" /> },
-    { text: "Operation and maintenance of systems", icon: <HelpCircle className="w-4 h-4 text-blue-600" /> },
-    { text: "Environmental and customer friendly Plant Installation", icon: <Leaf className="w-4 h-4 text-blue-600" /> },
-    { text: "Detailed Plant study and analysis", icon: <ClipboardCheck className="w-4 h-4 text-blue-600" /> },
+    { text: "Innovative and Ergonomic System design", icon: <Settings className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "All Equipment and Spares Supply with regard to wastewater Treatment", icon: <Layers className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Budget pricing", icon: <BadgePercent className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Complete Project Management", icon: <Shield className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Round the clock Technical backup", icon: <Clock className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Operation and maintenance of systems", icon: <HelpCircle className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Environmental and customer friendly Plant Installation", icon: <Leaf className="w-5.5 h-5.5 text-blue-600" /> },
+    { text: "Detailed Plant study and analysis", icon: <ClipboardCheck className="w-5.5 h-5.5 text-blue-600" /> },
   ];
 
   return (
@@ -52,7 +52,7 @@ const About = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             About IWTRS
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-3xl mx-auto opacity-90 drop-shadow-sm leading-relaxed">
             Engineering sustainable, high-recovery wastewater treatment and Zero Liquid Discharge solutions for modern industries.
           </p>
         </div>
@@ -87,10 +87,10 @@ const About = () => {
                   The key challenge is membrane fouling from organics and inorganics, which drives up replacement costs. So our focus is strong pre-treatment. Using high-load bio filtration, MBR, and custom desiring PVA removal, we deliver clean RO feed.
                 </p>
 
-                {/* Styled Highlight Box for the Result statement */}
+                {/* Styled Highlight Box for the Result statement - Updated to 96-98% */}
                 <div className="bg-emerald-50 text-emerald-800 p-4 rounded-xl border border-emerald-200/60 font-medium text-sm flex items-start gap-2.5 mt-4">
                   <span className="bg-emerald-600 text-white text-xs px-2 py-0.5 rounded font-bold uppercase mt-0.5 shrink-0">Result</span>
-                  <span>94-96% clean water recovery, protected membranes, and full environmental compliance.</span>
+                  <span>96-98% clean water recovery, protected membranes, and full environmental compliance.</span>
                 </div>
               </div>
 
@@ -257,7 +257,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Professional Services Include Section - Moved down below Catalog */}
+      {/* Professional Services Include Section - Icons are now styled larger */}
       <section className="py-16 bg-gradient-soft border-t border-b border-border/40">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="max-w-2xl mx-auto text-center mb-10">
@@ -273,7 +273,7 @@ const About = () => {
                 key={idx}
                 className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border/70 hover:border-blue-500/50 shadow-sm transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 shadow-sm">
                   {item.icon}
                 </div>
                 <span className="font-medium text-foreground text-sm leading-snug">{item.text}</span>

@@ -80,7 +80,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Contact Our Process Engineers
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-3xl mx-auto opacity-90 drop-shadow-sm leading-relaxed">
             Ready to optimize your wastewater treatment or upgrade to an advanced Zero Liquid Discharge system? Let's connect.
           </p>
         </div>

@@ -8,10 +8,25 @@ const Industries = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLoc, setSelectedLoc] = useState("All");
 
-  // ஒவ்வொரு இண்டஸ்ட்ரிக்கும் தனித்தனி ஐகான் கொடுக்கும் ஃபங்க்ஷன்
+  // விடுபட்ட 6-வது நிறுவனத்தின் தரவை நேரடியாக இங்கேயே இணைக்கிறோம்
+  const allProjects = useMemo(() => {
+    const missingProject = {
+      name: "Premier Fine Linens Private Limited",
+      industry: "Textile - Luxurious Of Bed Sheets",
+      capacity: 1100,
+      location: "SIPCOT Industrial Growth Centre, P.V.Palayam(PO), Perundurai - 638052, Tamil Nadu",
+      highlights: ["Luxurious Sheets", "ZLD Compliant", "High Quality"]
+    };
+
+    // ஏற்கனவே இருக்கும் projects லிஸ்ட்டில் இந்த பெயர் இல்லை என்றால் மட்டும் இணைக்கும்
+    const exists = projects.some(p => p.name.toLowerCase().includes("premier fine linens"));
+    return exists ? projects : [...projects, missingProject];
+  }, []);
+
+  // ஒவ்வொரு இண்டஸ்ட்ரிக்கும் தனித்தனி ஐகான் கொடுக்கும் ஃபங்க்ஷன் - Updated for Linens
   const getIndustryIcon = (industryName) => {
     const name = industryName.toLowerCase();
-    if (name.includes("textile") || name.includes("dyeing") || name.includes("woven")) {
+    if (name.includes("textile") || name.includes("dyeing") || name.includes("woven") || name.includes("linens")) {
       return <Shirt className="w-5 h-5 text-white" />;
     }
     if (name.includes("chemical") || name.includes("pharma")) {
@@ -26,9 +41,9 @@ const Industries = () => {
   // Get unique locations
   const locations = useMemo(() => {
     const locSet = new Set();
-    projects.forEach((p) => {
+    allProjects.forEach((p) => {
       const locLower = p.location.toLowerCase();
-      if (locLower.includes("tamilnadu") || locLower.includes("tamil nadu") || locLower.includes("tiruppur") || locLower.includes("erode")) {
+      if (locLower.includes("tamilnadu") || locLower.includes("tamil nadu") || locLower.includes("tiruppur") || locLower.includes("erode") || locLower.includes("perundurai")) {
         locSet.add("Tamil Nadu");
       } else if (locLower.includes("kerala") || locLower.includes("ernakulam")) {
         locSet.add("Kerala");
@@ -51,11 +66,11 @@ const Industries = () => {
       }
     });
     return ["All", ...Array.from(locSet)];
-  }, []);
+  }, [allProjects]);
 
   // Filter projects
   const filteredProjects = useMemo(() => {
-    return projects.filter((p) => {
+    return allProjects.filter((p) => {
       const matchesSearch =
         p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.industry.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -66,7 +81,7 @@ const Industries = () => {
       const locLower = p.location.toLowerCase();
       let matchesLoc = false;
       if (selectedLoc === "Tamil Nadu") {
-        matchesLoc = locLower.includes("tamilnadu") || locLower.includes("tamil nadu") || locLower.includes("tiruppur") || locLower.includes("erode");
+        matchesLoc = locLower.includes("tamilnadu") || locLower.includes("tamil nadu") || locLower.includes("tiruppur") || locLower.includes("erode") || locLower.includes("perundurai");
       } else if (selectedLoc === "Kerala") {
         matchesLoc = locLower.includes("kerala") || locLower.includes("ernakulam");
       } else if (selectedLoc === "Gujarat") {
@@ -89,16 +104,16 @@ const Industries = () => {
 
       return matchesSearch && matchesLoc;
     });
-  }, [searchQuery, selectedLoc]);
+  }, [searchQuery, selectedLoc, allProjects]);
 
   // Math metrics
-  const totalCapacity = projects.reduce((sum, p) => sum + p.capacity, 0);
-  const largestPlant = Math.max(...projects.map((p) => p.capacity));
-  const avgPlant = Math.round(totalCapacity / projects.length);
+  const totalCapacity = allProjects.reduce((sum, p) => sum + p.capacity, 0);
+  const largestPlant = Math.max(...allProjects.map((p) => p.capacity));
+  const avgPlant = Math.round(totalCapacity / allProjects.length);
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Banner - புது வேவ் டிசைன் இங்கே மாற்றப்பட்டுள்ளது */}
+      {/* Banner */}
       <section className="relative py-20 bg-gradient-brand text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-white">
@@ -112,7 +127,7 @@ const Industries = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Industrial Supplies & Plant Sites
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-3xl mx-auto opacity-90 drop-shadow-sm leading-relaxed">
             Over 20 premium plant projects successfully installed across textile processing, dyeing, woven, and chemical industries globally.
           </p>
         </div>
@@ -123,7 +138,7 @@ const Industries = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { val: "20+", label: "Active Project Sites" },
+              { val: `${allProjects.length}+`, label: "Active Project Sites" },
               { val: `${totalCapacity.toLocaleString()} m³`, label: "Total Capacity" },
               { val: `${largestPlant.toLocaleString()} m³`, label: "Largest Installation" },
               { val: `${avgPlant.toLocaleString()} m³`, label: "Average Plant Output" },
@@ -200,7 +215,7 @@ const Industries = () => {
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      {/* டைனமிக் இண்டஸ்ட்ரி ஐகான்கள் இங்கே மாற்றப்பட்டுள்ளது */}
+                      {/* டைனமிக் இண்டஸ்ட்ரி ஐகான்கள் */}
                       <div className="w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center shrink-0 shadow-soft group-hover:scale-105 transition-smooth">
                         {getIndustryIcon(p.industry)}
                       </div>
@@ -214,7 +229,7 @@ const Industries = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-smooth line-clamp-1">
+                    <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-smooth line-clamp-2 min-h-[48px]">
                       {p.name}
                     </h3>
                     <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mt-1.5">
@@ -223,7 +238,7 @@ const Industries = () => {
 
                     {/* Highlights tags */}
                     <div className="flex flex-wrap gap-1.5 mt-4">
-                      {p.highlights.map((h, i) => (
+                      {p.highlights && p.highlights.map((h, i) => (
                         <span
                           key={i}
                           className="text-[9px] font-semibold px-2 py-0.5 bg-gradient-soft text-foreground border border-border/50 rounded-full flex items-center gap-1 shrink-0"

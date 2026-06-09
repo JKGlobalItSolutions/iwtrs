@@ -84,7 +84,7 @@ const ProcessFlow = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4">
             Our Wastewater Process Flow
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="!text-white font-medium text-lg max-w-3xl mx-auto drop-shadow-sm opacity-95">
             From raw industrial effluent to crystal-clear reusable process water: a fully optimized, closed-loop recovery system.
           </p>
         </div>
