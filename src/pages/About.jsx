@@ -1,4 +1,4 @@
-import { ShieldCheck, Award, Users, ChevronRight, Recycle, Check, Building, Wrench, Globe, ShieldAlert } from "lucide-react";
+import { ShieldCheck, Award, Users, ChevronRight, Recycle, Check, Building, Wrench, Globe, ShieldAlert, Settings, Shield, BadgePercent, Layers, Clock, HelpCircle, Leaf, ClipboardCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -24,6 +24,18 @@ const About = () => {
     { title: "Upgrade & Retrofitting", desc: "Retrofitting old plants with modern automation, MBR systems, and high-recovery RO stages." },
   ];
 
+  // Professional Services List - Icons configured for Blue Theme
+  const professionalServicesList = [
+    { text: "Innovative and Ergonomic System design", icon: <Settings className="w-4 h-4 text-blue-600" /> },
+    { text: "All Equipment and Spares Supply with regard to wastewater Treatment", icon: <Layers className="w-4 h-4 text-blue-600" /> },
+    { text: "Budget pricing", icon: <BadgePercent className="w-4 h-4 text-blue-600" /> },
+    { text: "Complete Project Management", icon: <Shield className="w-4 h-4 text-blue-600" /> },
+    { text: "Round the clock Technical backup", icon: <Clock className="w-4 h-4 text-blue-600" /> },
+    { text: "Operation and maintenance of systems", icon: <HelpCircle className="w-4 h-4 text-blue-600" /> },
+    { text: "Environmental and customer friendly Plant Installation", icon: <Leaf className="w-4 h-4 text-blue-600" /> },
+    { text: "Detailed Plant study and analysis", icon: <ClipboardCheck className="w-4 h-4 text-blue-600" /> },
+  ];
+
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Banner */}
@@ -46,108 +58,92 @@ const About = () => {
         </div>
       </section>
 
-      {/* Corporate Overview - REMADE FOR PREMIUM PROFESSIONAL LOOK */}
+      {/* Corporate Overview */}
       <section className="py-16 md:py-24 container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center md:text-left mb-12 border-b border-border pb-6">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Corporate Overview</span>
+          <div className="text-center md:text-left mb-10 border-b border-border pb-6">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Corporate Overview</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
               Innovation Water Treatments & Recovery Services Pvt Ltd
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left Column: Core Introduction & Styled Paragraph Layout */}
-            <div className="lg:col-span-7 space-y-8">
-              {/* Main Headline Card */}
-              <div className="p-6 bg-gradient-soft border-l-4 border-primary rounded-r-2xl shadow-sm bg-card">
-                <p className="text-foreground font-medium text-lg leading-relaxed">
+          {/* items-stretch forces both cards to be of equal height */}
+          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* Left Column: Paragraphs wrapped inside a Premium Corporate Card */}
+            <div className="lg:col-span-7 bg-white border border-border rounded-3xl p-8 shadow-soft flex flex-col justify-between hover:shadow-md transition-all duration-300">
+              <div className="space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
+                
+                <p className="text-foreground font-semibold text-lg leading-relaxed border-l-4 border-blue-600 pl-4 bg-blue-50/40 py-3 rounded-r-2xl">
                   Headquartered in Tiruppur, Tamil Nadu, IWTRS is a premium process engineering company specializing in industrial wastewater recovery and Zero Liquid Discharge (ZLD) plant designs.
                 </p>
-              </div>
 
-              {/* Regulatory Context & Challenge Grid */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="p-5 border border-border/80 rounded-xl bg-card/50">
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3">
-                    <Globe className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-1.5 text-sm">Compliance & Mandates</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    With TNPCB/CPCB now mandating ZLD for process industries, water reuse has become critical. To meet this, IWTRS developed reliable treatment processes focused on high water recovery with low OpEx.
-                  </p>
-                </div>
-
-                <div className="p-5 border border-border/80 rounded-xl bg-card/50">
-                  <div className="w-9 h-9 rounded-lg bg-accent-soft flex items-center justify-center text-accent mb-3">
-                    <ShieldAlert className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-1.5 text-sm">Membrane Protection</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    After testing multiple treatment combinations, we found that RO membranes are essential for final salinity removal. The key challenge is membrane fouling from organics and in organics, which drives up replacement costs.
-                  </p>
-                </div>
-              </div>
-
-              {/* Solution Framework Statement */}
-              <div className="p-6 border border-primary/20 bg-primary-soft/10 rounded-2xl">
-                <h4 className="font-bold text-primary uppercase tracking-wider text-xs mb-2">Our Engineering Approach</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  So our focus is strong pre-treatment. Using high-load bio filtration, MBR, and custom desiring PVA removal, we deliver clean RO feed. 
+                <p>
+                  With TNPCB/CPCB now mandating ZLD for process industries, water reuse has become critical. To meet this, IWTRS developed reliable treatment processes focused on high water recovery with low OpEx. After testing multiple treatment combinations, we found that RO membranes are essential for final salinity removal.
                 </p>
-                <div className="mt-4 pt-4 border-t border-border flex items-center gap-2">
-                  <div className="px-3 py-1 bg-accent/10 text-accent font-bold text-xs rounded-full">
-                    Result
-                  </div>
-                  <span className="text-sm font-semibold text-foreground">
-                    94-96% clean water recovery, protected membranes, and full environmental compliance.
-                  </span>
+                
+                <p>
+                  The key challenge is membrane fouling from organics and inorganics, which drives up replacement costs. So our focus is strong pre-treatment. Using high-load bio filtration, MBR, and custom desiring PVA removal, we deliver clean RO feed.
+                </p>
+
+                {/* Styled Highlight Box for the Result statement */}
+                <div className="bg-emerald-50 text-emerald-800 p-4 rounded-xl border border-emerald-200/60 font-medium text-sm flex items-start gap-2.5 mt-4">
+                  <span className="bg-emerald-600 text-white text-xs px-2 py-0.5 rounded font-bold uppercase mt-0.5 shrink-0">Result</span>
+                  <span>94-96% clean water recovery, protected membranes, and full environmental compliance.</span>
                 </div>
               </div>
 
-              {/* Contact/Office Brief Row */}
-              <div className="flex flex-col sm:flex-row gap-6 border-t border-border pt-6">
+              {/* Info Row inside the Card */}
+              <div className="flex flex-col sm:flex-row gap-6 border-t border-border pt-6 mt-6">
                 <div className="flex gap-3 items-center">
-                  <Building className="w-5 h-5 text-muted-foreground shrink-0" />
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                    <Building className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h5 className="font-semibold text-foreground text-xs">Corporate Headquarters</h5>
+                    <h5 className="font-bold text-foreground text-xs">Corporate Headquarters</h5>
                     <p className="text-xs text-muted-foreground">Gandhi Nagar, Tiruppur, India</p>
                   </div>
                 </div>
                 <div className="flex gap-3 items-center">
-                  <Wrench className="w-5 h-5 text-muted-foreground shrink-0" />
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
+                    <Wrench className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h5 className="font-semibold text-foreground text-xs">Proven Track Record</h5>
+                    <h5 className="font-bold text-foreground text-xs">Proven Track Record</h5>
                     <p className="text-xs text-muted-foreground">Over 20 premium worldwide plant systems</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Why Partner Side Card (Maintained for layout balance) */}
-            <div className="lg:col-span-5 bg-gradient-soft border border-border p-8 rounded-3xl shadow-soft">
-              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-primary" /> Why Partner with IWTRS?
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  { t: "Deep Process Expertise", d: "Tailored engineering for complex effluent streams containing dyes, sizing agents, and heavy salt loads." },
-                  { t: "Energy-Efficient Design", desc: "Aeration flow makers, hydraulics modeling, and low-energy pump operations cut power by 32%+." },
-                  { t: "Extended Membrane Life", desc: "Advanced MBR pre-treatment keeps SDI under 2.5, extending RO membrane life up to 4 years." },
-                  { t: "Total Life-Cycle Support", desc: "From lab-scale feasibility assessments to full turnkey supply, automation, and ongoing O&M." }
-                ].map((item, idx) => (
-                  <li key={idx} className="flex gap-3 items-start">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0">
-                      <Check className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <strong className="text-foreground text-sm font-semibold block">{item.t}</strong>
-                      <span className="text-xs text-muted-foreground leading-normal mt-0.5 block">{item.d || item.desc}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+            {/* Right Column: Why Partner Side Card */}
+            <div className="lg:col-span-5 bg-gradient-soft border border-border p-8 rounded-3xl shadow-soft bg-card flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-blue-600" /> Why Partner with IWTRS?
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    { t: "Deep Process Expertise", d: "Tailored engineering for complex effluent streams containing dyes, sizing agents, and heavy salt loads." },
+                    { t: "Energy-Efficient Design", desc: "Aeration blowers, hydraulics modeling, and low-energy pump operations cut power by 32%+." },
+                    { t: "Extended Membrane Life", desc: "Advanced MBR pre-treatment keeps SDI under 2.5, extending RO membrane life up to 4 years." },
+                    { t: "Total Life-Cycle Support", desc: "From lab-scale feasibility assessments to full turnkey supply, automation, and ongoing O&M." }
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex gap-3 items-start">
+                      <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mt-1 shrink-0">
+                        <Check className="w-3.5 h-3.5" />
+                      </div>
+                      <div>
+                        <strong className="text-foreground text-sm font-semibold block">{item.t}</strong>
+                        <span className="text-xs text-muted-foreground leading-normal mt-0.5 block">{item.d || item.desc}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -156,7 +152,7 @@ const About = () => {
       <section className="py-16 md:py-24 bg-gradient-soft border-y border-border/60">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Executive Leadership</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Executive Leadership</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
               Engineers & Directors Behind IWTRS
             </h2>
@@ -201,7 +197,7 @@ const About = () => {
       <section className="py-16 md:py-24 container mx-auto px-6 max-w-6xl">
         <div className="grid lg:grid-cols-3 gap-10">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Comprehensive Coverage</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Comprehensive Coverage</span>
             <h2 className="text-3xl font-bold text-foreground mt-2 mb-4 leading-tight">
               Professional Services
             </h2>
@@ -221,7 +217,7 @@ const About = () => {
           <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
             {services.map((serv, index) => (
               <div key={index} className="p-6 bg-card border border-border rounded-xl shadow-soft hover:shadow-card hover:-translate-y-0.5 transition-smooth">
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 font-semibold text-sm">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mb-4 font-semibold text-sm">
                   0{index + 1}
                 </div>
                 <h4 className="font-semibold text-foreground text-base mb-2">{serv.title}</h4>
@@ -236,7 +232,7 @@ const About = () => {
       <section className="py-16 md:py-24 bg-gradient-soft border-t border-border/50">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Manufacturing & Procurement</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Manufacturing & Procurement</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
               Our Industrial Supplies Catalog
             </h2>
@@ -251,10 +247,36 @@ const About = () => {
                 key={index}
                 className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border/80 shadow-soft hover:border-accent/40 transition-smooth group"
               >
-                <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white shrink-0 group-hover:bg-gradient-brand transition-smooth">
+                <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white shrink-0 group-hover:bg-gradient-brand transition-smooth">
                   <Check className="w-4.5 h-4.5" />
                 </div>
                 <span className="font-semibold text-foreground text-sm leading-tight">{supp}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Services Include Section - Moved down below Catalog */}
+      <section className="py-16 bg-gradient-soft border-t border-b border-border/40">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="max-w-2xl mx-auto text-center mb-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">Strategic End-To-End Deliverables</span>
+            <h2 className="text-3xl font-bold text-foreground mt-2">
+              Professional Services Include
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {professionalServicesList.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border/70 hover:border-blue-500/50 shadow-sm transition-all duration-300"
+              >
+                <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0 shadow-sm">
+                  {item.icon}
+                </div>
+                <span className="font-medium text-foreground text-sm leading-snug">{item.text}</span>
               </div>
             ))}
           </div>

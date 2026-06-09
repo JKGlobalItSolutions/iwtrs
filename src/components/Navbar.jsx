@@ -24,11 +24,11 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 transition-smooth">
-        <div className="container mx-auto px-4 xl:px-6 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 xl:px-6 h-24 flex items-center justify-between">
           
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <img src={logo} alt="IWTRS" className="h-16 w-auto object-contain" />
+            <img src={logo} alt="IWTRS" className="h-20 w-auto object-contain" />
             <span className="font-display font-bold text-2xl tracking-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent hidden sm:block">
               IWTRS
             </span>

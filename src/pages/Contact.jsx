@@ -69,11 +69,10 @@ const Contact = () => {
       {/* Banner */}
       <section className="relative py-20 bg-gradient-brand text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-white">
-            <line x1="10" y1="10" x2="90" y2="90" stroke="currentColor" strokeWidth="1" />
-            <line x1="90" y1="10" x2="10" y2="90" stroke="currentColor" strokeWidth="1" />
-          </svg>
-        </div>
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-white">
+    <path d="M0,80 Q25,60 50,80 T100,80 L100,100 L0,100 Z" fill="currentColor" />
+  </svg>
+</div>
         <div className="container mx-auto px-6 relative text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] bg-white/20 text-white/95 px-4 py-1.5 rounded-full inline-block mb-4 backdrop-blur-md">
             Get In Touch

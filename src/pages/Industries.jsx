@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { projects } from "../data/projects";
-import { Building, MapPin, Activity, ShieldCheck, Search, SlidersHorizontal, Check } from "lucide-react";
+import { Building, MapPin, Activity, ShieldCheck, Search, SlidersHorizontal, Check, Droplet, Shirt, FlaskConical, Factory } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Input } from "../components/ui/input";
 
@@ -8,11 +8,25 @@ const Industries = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLoc, setSelectedLoc] = useState("All");
 
+  // ஒவ்வொரு இண்டஸ்ட்ரிக்கும் தனித்தனி ஐகான் கொடுக்கும் ஃபங்க்ஷன்
+  const getIndustryIcon = (industryName) => {
+    const name = industryName.toLowerCase();
+    if (name.includes("textile") || name.includes("dyeing") || name.includes("woven")) {
+      return <Shirt className="w-5 h-5 text-white" />;
+    }
+    if (name.includes("chemical") || name.includes("pharma")) {
+      return <FlaskConical className="w-5 h-5 text-white" />;
+    }
+    if (name.includes("food") || name.includes("beverage") || name.includes("agro")) {
+      return <Droplet className="w-5 h-5 text-white" />;
+    }
+    return <Factory className="w-5 h-5 text-white" />; // இதர இண்டஸ்ட்ரிகளுக்கு பொதுவான ஐகான்
+  };
+
   // Get unique locations
   const locations = useMemo(() => {
     const locSet = new Set();
     projects.forEach((p) => {
-      // Extract main region (e.g. Tamil Nadu, Kerala, Gujarat, Punjab)
       const locLower = p.location.toLowerCase();
       if (locLower.includes("tamilnadu") || locLower.includes("tamil nadu") || locLower.includes("tiruppur") || locLower.includes("erode")) {
         locSet.add("Tamil Nadu");
@@ -84,13 +98,11 @@ const Industries = () => {
 
   return (
     <div className="bg-background min-h-screen">
-      {/* Banner */}
+      {/* Banner - புது வேவ் டிசைன் இங்கே மாற்றப்பட்டுள்ளது */}
       <section className="relative py-20 bg-gradient-brand text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-white">
-            <rect x="0" y="0" width="100" height="100" fill="none" />
-            <line x1="0" y1="30" x2="100" y2="70" stroke="currentColor" strokeWidth="2" />
-            <line x1="0" y1="70" x2="100" y2="30" stroke="currentColor" strokeWidth="2" />
+            <path d="M0,80 Q25,60 50,80 T100,80 L100,100 L0,100 Z" fill="currentColor" />
           </svg>
         </div>
         <div className="container mx-auto px-6 relative text-center">
@@ -188,8 +200,9 @@ const Industries = () => {
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-4">
+                      {/* டைனமிக் இண்டஸ்ட்ரி ஐகான்கள் இங்கே மாற்றப்பட்டுள்ளது */}
                       <div className="w-10 h-10 rounded-lg bg-gradient-brand flex items-center justify-center shrink-0 shadow-soft group-hover:scale-105 transition-smooth">
-                        <Building className="w-5 h-5 text-white" />
+                        {getIndustryIcon(p.industry)}
                       </div>
                       <div className="text-right">
                         <span className="text-[10px] uppercase font-bold text-accent tracking-wider">
