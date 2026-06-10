@@ -10,6 +10,7 @@ import Technologies from "./pages/Technologies.jsx";
 import ProcessFlow from "./pages/ProcessFlow.jsx";
 import CostAnalysis from "./pages/CostAnalysis.jsx";
 import Industries from "./pages/Industries.jsx";
+import Gallery from "./pages/Gallery.jsx";
 import DepartmentSelection from "./pages/DepartmentSelection.jsx";
 import InternshipForm from "./pages/InternshipForm.jsx";
 // import SmartFeatures from "./pages/SmartFeatures.jsx";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/process" element={<ProcessFlow />} />
             <Route path="/cost" element={<CostAnalysis />} />
             <Route path="/industries" element={<Industries />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/internship/selection" element={<DepartmentSelection />} />
             <Route path="/internship/application" element={<InternshipForm />} />
             {/* <Route path="/features" element={<SmartFeatures />} /> */}

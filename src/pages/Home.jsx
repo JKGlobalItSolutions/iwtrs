@@ -39,6 +39,12 @@ const Home = () => {
 
         <div className="relative container mx-auto px-6 pt-32 pb-32">
           <div className="max-w-3xl animate-fade-in">
+            
+            {/* நிறுவனத்தின் பெயர் இங்கே சேர்க்கப்பட்டுள்ளது */}
+            <div className="text-white/90 text-sm font-bold tracking-widest uppercase mb-3">
+              Innovation Water Treatments & Recovery Services Pvt Ltd
+            </div>
+
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs font-semibold tracking-wide mb-6">
               <Leaf className="w-3.5 h-3.5 text-primary-glow" />
               ECO-ENGINEERED · ZERO LIQUID DISCHARGE
@@ -54,7 +60,6 @@ const Home = () => {
             
             <p className="text-white text-lg md:text-lg max-w-2xl mb-10 leading-relaxed">
               <span className="text-white/95 font-semibold drop-shadow-sm">
-                {/* Updated to 96–98% */}
                 Achieve up to 96–98% water recovery with optimized operating cost — engineered for the world's most demanding industries.
               </span>{" "}
             </p>
@@ -124,7 +129,6 @@ const Home = () => {
             />
             <FeatureCard
               icon={Recycle}
-              /* Updated title and description to 96–98% */
               title="High Recovery 96–98%"
               description="Advanced membrane trains and ZLD integration return clean water back into your industrial processes."
             />
@@ -137,7 +141,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Technologies Preview - Fixed Spacing (Correction 3 Applied here) */}
+      {/* Technologies Preview */}
       <section className="pt-4 pb-16 md:pb-20 bg-gradient-soft">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-14">
