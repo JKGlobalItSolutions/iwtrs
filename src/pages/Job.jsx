@@ -18,7 +18,7 @@ const departments = [
   { id: "eandi", name: "Electronics & Instrumentation", image: instrumentationImg, description: "Instrumentation, controls and electronic systems." },
 ];
 
-const Internship = () => {
+const Job = () => {
   const navigate = useNavigate();
   const [intro, setIntro] = useState({ name: "", email: "", phone: "" });
   const [errors, setErrors] = useState({});
@@ -44,7 +44,7 @@ const Internship = () => {
   const handleIntroSubmit = () => {
     if (validateIntro()) {
       const message =
-        `*New Internship Enquiry*\n\n` +
+        `*New Job Enquiry*\n\n` +
         `*Name:* ${intro.name}\n` +
         `*Email:* ${intro.email}\n` +
         `*Phone:* ${intro.phone}`;
@@ -60,11 +60,6 @@ const Internship = () => {
     navigate("/internship/application", { state: { selectedDepartment: department.name } });
   };
 
-  const openFormModal = (department) => {
-    setActiveDepartment(department.name);
-    setIsFormOpen(true);
-  };
-
   const closeForm = () => {
     setIsFormOpen(false);
     setActiveDepartment(null);
@@ -74,84 +69,116 @@ const Internship = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <div className="container mx-auto px-6 py-14">
         <div className="mx-auto max-w-4xl text-center mb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Internship</p>
-          <h1 className="mt-4 text-3xl md:text-4xl font-bold">Start your internship journey</h1>
-          <p className="mt-3 text-sm text-slate-500 max-w-2xl mx-auto">Please provide basic details to continue to department selection.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Jobs</p>
+          <h1 className="mt-4 text-3xl md:text-4xl font-bold">Start your career journey</h1>
+          <p className="mt-3 text-sm text-slate-500 max-w-2xl mx-auto">
+            Please provide basic details to continue to job selection.
+          </p>
         </div>
 
         <div className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {departments.map((item) => {
-              return (
-                <div key={item.id} className="rounded-2xl border border-border/80 bg-white p-6 shadow-soft transition-transform hover:shadow-card hover:-translate-y-1">
-                  <div className="mb-6">
-                    <img src={item.image} alt={item.name} className="department-image" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.name}</h3>
-                  <p className="text-sm text-slate-500 mb-4">{item.description}</p>
-                  <Button
-                    type="button"
-                    onClick={() => handleCardClick(item)}
-                    className="w-full rounded-full bg-sky-600 px-4 py-3 text-sm font-semibold text-white hover:bg-sky-700"
-                  >
-                    I AM INTERESTED
-                  </Button>
+            {departments.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-2xl border border-border/80 bg-white p-6 shadow-soft transition-transform hover:shadow-card hover:-translate-y-1"
+              >
+                <div className="mb-6">
+                  <img src={item.image} alt={item.name} className="department-image" />
                 </div>
-              );
-            })}
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.name}</h3>
+                <p className="text-sm text-slate-500 mb-4">{item.description}</p>
+                <Button
+                  type="button"
+                  onClick={() => handleCardClick(item)}
+                  className="w-full rounded-full bg-sky-600 px-4 py-3 text-sm font-semibold text-white hover:bg-sky-700"
+                >
+                  I AM INTERESTED
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Intro modal */}
-      <Dialog open={!showDepartments} onOpenChange={(open) => {
-        if (!open) setShowDepartments(true);
-      }}>
+      {/* Intro Modal */}
+      <Dialog
+        open={!showDepartments}
+        onOpenChange={(open) => {
+          if (!open) setShowDepartments(true);
+        }}
+      >
         <DialogContent className="max-w-md overflow-hidden bg-white rounded-2xl border border-border/80 shadow-card p-0">
           <DialogHeader className="p-6 pb-4">
             <DialogTitle className="text-xl font-bold">Welcome — please share basic details</DialogTitle>
-            <DialogDescription className="text-sm text-slate-500 mt-1">Our team will contact you.</DialogDescription>
+            <DialogDescription className="text-sm text-slate-500 mt-1">
+              Our team will contact you.
+            </DialogDescription>
           </DialogHeader>
           <div className="p-6">
             <div className="space-y-4">
               <div>
                 <Label className="text-xs">Name</Label>
-                <Input value={intro.name} onChange={(e) => handleIntroChange("name", e.target.value)} placeholder="Your full name" className="mt-2" />
+                <Input
+                  value={intro.name}
+                  onChange={(e) => handleIntroChange("name", e.target.value)}
+                  placeholder="Your full name"
+                  className="mt-2"
+                />
                 {errors.name && <p className="mt-2 text-xs text-destructive">{errors.name}</p>}
               </div>
               <div>
                 <Label className="text-xs">Email</Label>
-                <Input value={intro.email} onChange={(e) => handleIntroChange("email", e.target.value)} placeholder="you@example.com" className="mt-2" />
+                <Input
+                  value={intro.email}
+                  onChange={(e) => handleIntroChange("email", e.target.value)}
+                  placeholder="you@example.com"
+                  className="mt-2"
+                />
                 {errors.email && <p className="mt-2 text-xs text-destructive">{errors.email}</p>}
               </div>
               <div>
                 <Label className="text-xs">Phone Number</Label>
-                <Input value={intro.phone} onChange={(e) => handleIntroChange("phone", e.target.value)} placeholder="Enter phone number" className="mt-2" />
+                <Input
+                  value={intro.phone}
+                  onChange={(e) => handleIntroChange("phone", e.target.value)}
+                  placeholder="Enter phone number"
+                  className="mt-2"
+                />
                 {errors.phone && <p className="mt-2 text-xs text-destructive">{errors.phone}</p>}
               </div>
             </div>
 
             <div className="mt-6 flex justify-end gap-3">
-              <Button variant="outline" onClick={() => setShowDepartments(true)} className="rounded-full">Cancel</Button>
-              <Button onClick={handleIntroSubmit} className="rounded-full bg-sky-600">Submit</Button>
+              <Button
+                variant="outline"
+                onClick={() => setShowDepartments(true)}
+                className="rounded-full"
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleIntroSubmit} className="rounded-full bg-sky-600">
+                Submit
+              </Button>
             </div>
           </div>
         </DialogContent>
       </Dialog>
 
-      <Dialog open={isFormOpen} onOpenChange={(open) => {
-        if (!open) {
-          closeForm();
-        } else {
-          setIsFormOpen(true);
-        }
-      }}>
+      {/* Apply Modal */}
+      <Dialog
+        open={isFormOpen}
+        onOpenChange={(open) => {
+          if (!open) closeForm();
+          else setIsFormOpen(true);
+        }}
+      >
         <DialogContent className="max-w-5xl overflow-hidden bg-white rounded-3xl border border-border/80 shadow-card p-0">
           <DialogHeader className="flex items-start justify-between gap-4 p-6 pb-4 border-b border-border/80">
             <div>
               <DialogTitle className="text-2xl font-bold">Apply for {activeDepartment}</DialogTitle>
               <DialogDescription className="text-sm text-slate-500 mt-2">
-                Complete your internship application in the popup and submit it when ready.
+                Complete your job application and submit it when ready.
               </DialogDescription>
             </div>
             <DialogClose asChild>
@@ -172,4 +199,4 @@ const Internship = () => {
   );
 };
 
-export default Internship;
+export default Job;

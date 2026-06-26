@@ -37,11 +37,11 @@ const Home = () => {
           <path fill="currentColor" d="M0,64 C240,120 480,16 720,48 C960,80 1200,16 1440,56 L1440,120 L0,120 Z" />
         </svg>
 
-        <div className="relative container mx-auto px-6 pt-32 pb-32">
+        <div className="relative container mx-auto px-6 pt-16 pb-32">
           <div className="max-w-3xl animate-fade-in">
             
-            {/* நிறுவனத்தின் பெயர் இங்கே சேர்க்கப்பட்டுள்ளது */}
-            <div className="text-white/90 text-sm font-bold tracking-widest uppercase mb-3">
+            {/* நிறுவனத்தின் பெயர் - மொபைல் வியூக்காக responsive மாற்றங்கள் செய்யப்பட்டுள்ளது */}
+            <div className="text-white/90 text-[10px] sm:text-xs md:text-base lg:text-xl font-bold tracking-widest uppercase mb-3 whitespace-nowrap">
               Innovation Water Treatments & Recovery Services Pvt Ltd
             </div>
 
@@ -50,7 +50,8 @@ const Home = () => {
               ECO-ENGINEERED · ZERO LIQUID DISCHARGE
             </span>
             
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold !text-white leading-[1.05] mb-6">
+            {/* முக்கிய தலைப்பு - Responsive text size மற்றும் break-words */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold !text-white leading-[1.1] mb-6 break-words">
               Advanced Wastewater Treatment &{" "}
               <span className="text-[#0EA5E9] bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-sm">
                 Zero Liquid Discharge
@@ -122,21 +123,9 @@ const Home = () => {
             </Button>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <FeatureCard
-              icon={Zap}
-              title="Energy Efficient"
-              description="Optimized aeration, hydraulics, and pump scheduling cut power consumption across every plant phase."
-            />
-            <FeatureCard
-              icon={Recycle}
-              title="High Recovery 96–98%"
-              description="Advanced membrane trains and ZLD integration return clean water back into your industrial processes."
-            />
-            <FeatureCard
-              icon={Gauge}
-              title="Low Operating Cost"
-              description="Right-sized chemistry, advanced automation, and low-maintenance design reduce lifecycle cost dramatically."
-            />
+            <FeatureCard icon={Zap} title="Energy Efficient" description="Optimized aeration, hydraulics, and pump scheduling cut power consumption across every plant phase." />
+            <FeatureCard icon={Recycle} title="High Recovery 96–98%" description="Advanced membrane trains and ZLD integration return clean water back into your industrial processes." />
+            <FeatureCard icon={Gauge} title="Low Operating Cost" description="Right-sized chemistry, advanced automation, and low-maintenance design reduce lifecycle cost dramatically." />
           </div>
         </div>
       </section>
@@ -191,11 +180,7 @@ const Home = () => {
               <p className="!text-white font-medium text-lg mb-8 leading-relaxed drop-shadow-sm">
                 Talk to our process engineers about your effluent stream — we'll design the right recovery solution.
               </p>
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 rounded-full px-8 h-12 text-base font-semibold hover:scale-[1.02] transition-smooth shadow-lg"
-              >
+              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 h-12 text-base font-semibold hover:scale-[1.02] transition-smooth shadow-lg">
                 <Link to="/contact">
                   Contact Us <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>

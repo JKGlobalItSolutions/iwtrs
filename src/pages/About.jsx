@@ -1,5 +1,7 @@
 import { ShieldCheck, Award, Users, ChevronRight, Recycle, Check, Building, Wrench, Globe, ShieldAlert, Settings, Shield, BadgePercent, Layers, Clock, HelpCircle, Leaf, ClipboardCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import directorTR from "@/assets/director-tr.jpg";
+import directorSilvano from "@/assets/director-silvano.jpg";
 
 const About = () => {
   const supplies = [
@@ -24,7 +26,6 @@ const About = () => {
     { title: "Upgrade & Retrofitting", desc: "Retrofitting old plants with modern automation, MBR systems, and high-recovery RO stages." },
   ];
 
-  // Professional Services List - Icons configured for Blue Theme with increased sizes (w-5.5 h-5.5)
   const professionalServicesList = [
     { text: "Innovative and Ergonomic System design", icon: <Settings className="w-5.5 h-5.5 text-blue-600" /> },
     { text: "All Equipment and Spares Supply with regard to wastewater Treatment", icon: <Layers className="w-5.5 h-5.5 text-blue-600" /> },
@@ -68,33 +69,23 @@ const About = () => {
             </h2>
           </div>
 
-          {/* items-stretch forces both cards to be of equal height */}
           <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-            
-            {/* Left Column: Paragraphs wrapped inside a Premium Corporate Card */}
             <div className="lg:col-span-7 bg-white border border-border rounded-3xl p-8 shadow-soft flex flex-col justify-between hover:shadow-md transition-all duration-300">
               <div className="space-y-5 text-muted-foreground text-sm md:text-base leading-relaxed">
-                
                 <p className="text-foreground font-semibold text-lg leading-relaxed border-l-4 border-blue-600 pl-4 bg-blue-50/40 py-3 rounded-r-2xl">
                   Headquartered in Tiruppur, Tamil Nadu, IWTRS is a premium process engineering company specializing in industrial wastewater recovery and Zero Liquid Discharge (ZLD) plant designs.
                 </p>
-
                 <p>
                   With TNPCB/CPCB now mandating ZLD for process industries, water reuse has become critical. To meet this, IWTRS developed reliable treatment processes focused on high water recovery with low OpEx. After testing multiple treatment combinations, we found that RO membranes are essential for final salinity removal.
                 </p>
-                
                 <p>
                   The key challenge is membrane fouling from organics and inorganics, which drives up replacement costs. So our focus is strong pre-treatment. Using high-load bio filtration, MBR, and custom desiring PVA removal, we deliver clean RO feed.
                 </p>
-
-                {/* Styled Highlight Box for the Result statement - Updated to 96-98% */}
                 <div className="bg-emerald-50 text-emerald-800 p-4 rounded-xl border border-emerald-200/60 font-medium text-sm flex items-start gap-2.5 mt-4">
                   <span className="bg-emerald-600 text-white text-xs px-2 py-0.5 rounded font-bold uppercase mt-0.5 shrink-0">Result</span>
                   <span>96-98% clean water recovery, protected membranes, and full environmental compliance.</span>
                 </div>
               </div>
-
-              {/* Info Row inside the Card */}
               <div className="flex flex-col sm:flex-row gap-6 border-t border-border pt-6 mt-6">
                 <div className="flex gap-3 items-center">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
@@ -117,7 +108,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Right Column: Why Partner Side Card */}
             <div className="lg:col-span-5 bg-gradient-soft border border-border p-8 rounded-3xl shadow-soft bg-card flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
@@ -143,7 +133,6 @@ const About = () => {
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -162,10 +151,15 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Director 1 */}
+            
+            {/* Director 1 - T R Thirunavukkarasu */}
             <div className="bg-card border border-border/80 rounded-2xl p-8 shadow-soft flex flex-col md:flex-row gap-6 hover:shadow-card hover:-translate-y-1 transition-smooth">
-              <div className="w-16 h-16 rounded-full bg-gradient-brand flex items-center justify-center text-white shrink-0 shadow-soft">
-                <Users className="w-7 h-7" />
+              <div className="shrink-0">
+                <img
+                  src={directorTR}
+                  alt="T R Thirunavukkarasu"
+                  className="w-20 h-20 rounded-full object-cover object-top shadow-soft border-2 border-blue-100"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground">T R Thirunavukkarasu</h3>
@@ -176,10 +170,14 @@ const About = () => {
               </div>
             </div>
 
-            {/* Director 2 */}
+            {/* Director 2 - Silvano Storti */}
             <div className="bg-card border border-border/80 rounded-2xl p-8 shadow-soft flex flex-col md:flex-row gap-6 hover:shadow-card hover:-translate-y-1 transition-smooth">
-              <div className="w-16 h-16 rounded-full bg-gradient-brand flex items-center justify-center text-white shrink-0 shadow-soft">
-                <Users className="w-7 h-7" />
+              <div className="shrink-0">
+                <img
+                  src={directorSilvano}
+                  alt="Silvano Storti"
+                  className="w-20 h-20 rounded-full object-cover object-top shadow-soft border-2 border-blue-100"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground">Silvano Storti</h3>
@@ -189,6 +187,7 @@ const About = () => {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -257,7 +256,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Professional Services Include Section - Icons are now styled larger */}
+      {/* Professional Services Include Section */}
       <section className="py-16 bg-gradient-soft border-t border-b border-border/40">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="max-w-2xl mx-auto text-center mb-10">

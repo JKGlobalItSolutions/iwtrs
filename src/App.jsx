@@ -16,6 +16,7 @@ import InternshipForm from "./pages/InternshipForm.jsx";
 // import SmartFeatures from "./pages/SmartFeatures.jsx";
 import Contact from "./pages/Contact.jsx";
 import Internship from "./pages/Internship.jsx";
+import Job from "./pages/Job.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
             {/* <Route path="/features" element={<SmartFeatures />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/internship" element={<Internship />} />
+            <Route path="/jobs" element={<Job />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -50,4 +52,3 @@ const App = () => (
 );
 
 export default App;
-

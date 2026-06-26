@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50 transition-smooth">
-        
+
         {/* NAVBAR */}
         <div className="relative container mx-auto px-4 xl:px-6 h-24 flex items-center">
 
@@ -87,7 +87,7 @@ const Navbar = () => {
               <span
                 className={cn(
                   "flex items-center gap-1 transition-smooth font-semibold whitespace-nowrap",
-                  location.pathname === "/internship"
+                  location.pathname === "/internship" || location.pathname === "/jobs"
                     ? "text-primary font-bold"
                     : "text-muted-foreground hover:text-primary"
                 )}
@@ -109,6 +109,13 @@ const Navbar = () => {
                 >
                   <Award className="w-4 h-4 text-accent" />
                   <span>Internship</span>
+                </Link>
+                <Link
+                  to="/jobs"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2 text-sm font-medium rounded-lg text-muted-foreground hover:text-primary hover:bg-gradient-soft transition-smooth"
+                >
+                  <Award className="w-4 h-4 text-accent" />
+                  <span>Jobs</span>
                 </Link>
               </div>
             </div>
@@ -173,7 +180,33 @@ const Navbar = () => {
               </button>
             ))}
 
-            {/* MOBILE EXP BADGE - Contact லிங்கிற்கு கீழே சேர்க்கப்பட்டுள்ளது */}
+            {/* MOBILE INTERNSHIP LINK */}
+            <button
+              onClick={() => handleNavigation("/internship")}
+              className={cn(
+                "cursor-pointer font-semibold text-lg block w-full py-4 rounded-xl hover:bg-slate-50 transition-all text-center bg-transparent border-none appearance-none outline-none",
+                location.pathname === "/internship"
+                  ? "text-primary bg-slate-50/50"
+                  : "text-slate-800 hover:text-primary"
+              )}
+            >
+              Internship
+            </button>
+
+            {/* MOBILE JOBS LINK */}
+            <button
+              onClick={() => handleNavigation("/jobs")}
+              className={cn(
+                "cursor-pointer font-semibold text-lg block w-full py-4 rounded-xl hover:bg-slate-50 transition-all text-center bg-transparent border-none appearance-none outline-none",
+                location.pathname === "/jobs"
+                  ? "text-primary bg-slate-50/50"
+                  : "text-slate-800 hover:text-primary"
+              )}
+            >
+              Jobs
+            </button>
+
+            {/* MOBILE EXP BADGE */}
             <div className="flex justify-center mt-6">
               <img
                 src={expBadge}
